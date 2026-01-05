@@ -84,7 +84,7 @@
         "name": "Panama",
         "battleground": true,
         "stability": 2,
-        "blue-influence": 0,
+        "blue-influence": 1,
         "red-influence": 0,
         "adjacentTo": "none",
         "region": "CA"
@@ -220,7 +220,7 @@
         "name": "Sud Africa",
         "battleground": true,
         "stability": 3,
-        "blue-influence": 0,
+        "blue-influence": 1,
         "red-influence": 0,
         "adjacentTo": "none",
         "region": "Africa"
@@ -356,7 +356,7 @@
         "battleground": false,
         "stability": 2,
         "blue-influence": 0,
-        "red-influence": 0,
+        "red-influence": 1,
         "adjacentTo": "none",
         "region": "ME"
     },
@@ -382,7 +382,7 @@
         "name": "Israele",
         "battleground": true,
         "stability": 4,
-        "blue-influence": 0,
+        "blue-influence": 1,
         "red-influence": 0,
         "adjacentTo": "none",
         "region": "ME"
@@ -392,7 +392,7 @@
         "battleground": true,
         "stability": 3,
         "blue-influence": 0,
-        "red-influence": 0,
+        "red-influence": 1,
         "adjacentTo": "none",
         "region": "ME"
     },
@@ -400,7 +400,7 @@
         "name": "Iran",
         "battleground": true,
         "stability": 2,
-        "blue-influence": 0,
+        "blue-influence": 1,
         "red-influence": 0,
         "adjacentTo": "none",
         "region": "ME"
@@ -436,7 +436,7 @@
         "name": "Canada",
         "battleground": false,
         "stability": 4,
-        "blue-influence": 0,
+        "blue-influence": 2,
         "red-influence": 0,
         "adjacentTo": "USA",
         "region": "Europe"
@@ -446,7 +446,7 @@
         "battleground": false,
         "stability": 4,
         "blue-influence": 0,
-        "red-influence": 0,
+        "red-influence": 1,
         "adjacentTo": "URSS",
         "region": "Europe"
     },
@@ -482,7 +482,7 @@
         "battleground": true,
         "stability": 3,
         "blue-influence": 0,
-        "red-influence": 0,
+        "red-influence": 3,
         "adjacentTo": "none",
         "region": "Europe"
     },
@@ -535,7 +535,7 @@
         "name": "Regno Unito",
         "battleground": false,
         "stability": 5,
-        "blue-influence": 0,
+        "blue-influence": 5,
         "red-influence": 0,
         "adjacentTo": "none",
         "region": "Europe"
@@ -635,7 +635,7 @@
         "battleground": true,
         "stability": 3,
         "blue-influence": 0,
-        "red-influence": 0,
+        "red-influence": 3,
         "adjacentTo": "URSS",
         "region": "Asia"
     },
@@ -643,7 +643,7 @@
         "name": "Giappone",
         "battleground": true,
         "stability": 4,
-        "blue-influence": 0,
+        "blue-influence": 1,
         "red-influence": 0,
         "adjacentTo": "USA",
         "region": "Asia"
@@ -680,7 +680,7 @@
         "name": "Corea del Sud",
         "battleground": true,
         "stability": 3,
-        "blue-influence": 0,
+        "blue-influence": 1,
         "red-influence": 0,
         "adjacentTo": "none",
         "region": "Asia"
@@ -729,7 +729,7 @@
         "name": "Filippine",
         "battleground": false,
         "stability": 2,
-        "blue-influence": 0,
+        "blue-influence": 1,
         "red-influence": 0,
         "adjacentTo": "none",
         "region": "Asia",
@@ -759,7 +759,7 @@
         "name": "Australia",
         "battleground": false,
         "stability": 4,
-        "blue-influence": 0,
+        "blue-influence": 4,
         "red-influence": 0,
         "adjacentTo": "none",
         "region": "Asia",
