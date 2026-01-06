@@ -3,7 +3,7 @@ import { Text } from '~/components/ui';
 
 export default function TabOneScreen() {
   return (
-    <View>
+    <View className="flex h-full items-center justify-center">
       <Text>Tab One</Text>
     </View>
   );
