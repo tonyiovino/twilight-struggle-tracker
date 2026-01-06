@@ -3,8 +3,8 @@ import { Text } from '~/components/ui';
 
 export default function TabTwoScreen() {
   return (
-    <View>
-      <Text>Tab One</Text>
+    <View className="flex h-full items-center justify-center">
+      <Text>Tab Donate Here</Text>
     </View>
   );
 }

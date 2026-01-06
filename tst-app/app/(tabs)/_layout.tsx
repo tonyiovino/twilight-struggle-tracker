@@ -23,7 +23,6 @@ export default function TabLayout() {
   const INDEX_OPTIONS = {
     ...SCREEN_OPTIONS,
     title: 'TS Tracker',
-    headerTitleStyle: { fontSize: 24 },
     tabBarIcon: ({ focused, size }) => (
       <TabBarIcon type="FontAwesome5" name="calculator" active={focused} />
     ),
@@ -31,7 +30,7 @@ export default function TabLayout() {
 
   const DONATE_OPTIONS = {
     ...SCREEN_OPTIONS,
-    title: 'Donate',
+    title: 'TS Tracker',
     tabBarIcon: ({ focused, size }) => (
       <TabBarIcon type="FontAwesome5" name="donate" active={focused} />
     ),
