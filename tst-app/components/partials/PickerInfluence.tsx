@@ -5,16 +5,17 @@ import Animated, { useSharedValue, useAnimatedStyle, withSpring } from 'react-na
 import { Text } from '~/components/ui';
 import { cn } from '~/lib/cn';
 import * as Haptic from 'expo-haptics';
+import { ClassValue } from 'class-variance-authority/types';
 
 interface PickerProps {
   min: number;
   max: number;
   value?: number;
-  color?: string;
+  className?: ClassValue;
   onChange: (n: number) => void;
 }
 
-export const PickerInfluence = ({ min, max, value = min, color, onChange }: PickerProps) => {
+export const PickerInfluence = ({ min, max, value = min, className, onChange }: PickerProps) => {
   const [selected, setSelected] = useState(value);
 
   const step = 32;
@@ -67,7 +68,7 @@ export const PickerInfluence = ({ min, max, value = min, color, onChange }: Pick
       <View
         className={cn(
           'h-10 w-20 flex-row items-center justify-center overflow-hidden rounded-2xl border border-border',
-          `bg-${color}`
+          className
         )}>
         <Animated.View className="flex-row" style={animatedStyle}>
           {numbers.map((n) => (

@@ -62,15 +62,21 @@ export default function Index() {
 }
 
 const CountryItem = ({ country }: { country: Country }) => {
+  const { setInfluence } = useTrackerStore();
+
+  const dominateBlue = country.blueInfluence - country.redInfluence >= country.stability;
+  const dominateRed = country.redInfluence - country.blueInfluence >= country.stability;
+
   return (
     <View className="flex-row items-center justify-center gap-6 p-2">
       <PickerInfluence
-        color={
-          country.blueInfluence - country.redInfluence >= country.stability ? 'blue-500' : undefined
-        }
-        max={30}
+        className={dominateBlue && 'bg-blue-500'}
+        max={10}
         min={0}
-        onChange={() => {}}
+        value={country.blueInfluence}
+        onChange={(newBlueInfluence) => {
+          setInfluence(country.name, 'blue', newBlueInfluence);
+        }}
       />
 
       <View
@@ -86,13 +92,12 @@ const CountryItem = ({ country }: { country: Country }) => {
       </View>
 
       <PickerInfluence
-        color={
-          country.redInfluence - country.blueInfluence >= country.stability ? 'red-500' : undefined
-        }
+        className={dominateRed && 'bg-red-500'}
         max={10}
         min={0}
-        onChange={(n) => {
-          console.log('numero', n, 'è', country.stability);
+        value={country.redInfluence}
+        onChange={(newRedInfluence) => {
+          setInfluence(country.name, 'red', newRedInfluence);
         }}
       />
     </View>
@@ -114,7 +119,8 @@ const RegionHeader = ({
   return (
     <View className="mb-2 rounded-2xl bg-card">
       <Pressable className="flex-row items-center justify-between p-4" onPress={onPress}>
-        <Text variant="heading">{title}: 8</Text>
+        <Text variant="heading">{5}</Text>
+        <Text variant="heading">{title}</Text>
 
         <Animated.View style={animatedStyle}>
           <Icon name="arrow-right" />
