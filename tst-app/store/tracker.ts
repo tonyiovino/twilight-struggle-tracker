@@ -3,21 +3,21 @@ import { createJSONStorage, persist } from 'zustand/middleware';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { regions } from '~/store/regions_data';
 import { countries } from '~/store/countries_data';
-import { Countries, Regions, TTrackeStore } from './types';
+import { Countries, Regions, TTrackerStore } from './types';
 
-export interface TTrackeState {
+export interface TTrackerState {
   regions: Regions;
 
   countries: Countries;
 }
 
-export interface TTrackeMutations {
+export interface TTrackerMutations {
   setCountries: (countries: Countries) => void;
 
   setCountryInfluence: (countryName: string, blueInfluence: number, redInfluence: number) => void;
 }
 
-export interface TTrackeAction {
+export interface TTrackerAction {
   setInfluence: (countryName: string, side: 'blue' | 'red', value: number) => void;
 }
 
@@ -25,7 +25,7 @@ const trackerState = {
   regions: regions,
 
   countries: countries as Countries,
-} satisfies TTrackeState;
+} satisfies TTrackerState;
 
 const trackerMutations = {
   setCountries: (countries) => useTrackerStore.setState({ countries }),
@@ -36,7 +36,7 @@ const trackerMutations = {
         c.name === countryName ? { ...c, blueInfluence, redInfluence } : c
       ),
     })),
-} satisfies TTrackeMutations;
+} satisfies TTrackerMutations;
 
 const trackerAction = {
   setInfluence: (countryName, side, value) => {
@@ -51,12 +51,12 @@ const trackerAction = {
       side === 'red' ? value : country.redInfluence
     );
   },
-} satisfies TTrackeAction;
+} satisfies TTrackerAction;
 
-export const useTrackerStore = create<TTrackeStore>()(
+export const useTrackerStore = create<TTrackerStore>()(
   persist(
     () =>
-      <TTrackeStore>{
+      <TTrackerStore>{
         ...trackerState,
         ...trackerMutations,
         ...trackerAction,
