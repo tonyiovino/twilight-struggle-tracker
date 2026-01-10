@@ -1,4 +1,5 @@
 import { TTrackerAction, TTrackerMutations, TTrackerState } from './tracker';
+import { TPointAction, TPointMutations, TPointState } from './point';
 
 export type RegionId = 'Europe' | 'Asia' | 'CA' | 'SA' | 'Africa' | 'ME';
 
@@ -28,3 +29,5 @@ export type Regions = Record<RegionId, Region>;
 export type Countries = Country[];
 
 export type TTrackerStore = TTrackerState & TTrackerMutations & TTrackerAction;
+
+export type TPointStore = TPointAction & TPointMutations & TPointState;

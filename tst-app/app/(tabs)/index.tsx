@@ -6,9 +6,12 @@ import { PickerInfluence } from '~/components/partials';
 import { cn } from '~/lib/cn';
 import { useTrackerStore } from '~/store/tracker';
 import { RegionId, Country } from '~/store/types';
+import { PointSheetModal } from '~/components/ts/PointSheetModal';
+import { usePointStore } from '~/store';
 
 export default function Index() {
   const { regions, countries } = useTrackerStore();
+  const { pointsModal, setPointsModal } = usePointStore();
 
   const sections = Object.entries(regions).map(([regionId, region]) => ({
     regionId: regionId as RegionId,
@@ -57,6 +60,8 @@ export default function Index() {
           />
         )}
       />
+
+      <PointSheetModal visible={pointsModal} onClose={() => setPointsModal(false)} />
     </View>
   );
 }
