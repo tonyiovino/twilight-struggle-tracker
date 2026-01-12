@@ -54,13 +54,14 @@ export const InfluenceValue = ({
   const [active, setActive] = useState(false);
 
   // colori in base all’influenza
-  const colorsInfluence = useMemo(
-    () => ({
-      text: color ? `text-${color}-500` : '',
-      background: color ? `bg-${color}-500` : '',
-    }),
-    [color]
-  );
+  const bgClass = cn({
+    'bg-blue-500': color === 'blue',
+    'bg-red-500': color === 'red',
+  });
+  const textClass = cn({
+    'text-blue-500': color === 'blue',
+    'text-red-500': color === 'red',
+  });
 
   ////////////////////////////////////////////////
   // Gesture
@@ -138,7 +139,7 @@ export const InfluenceValue = ({
             <Animated.View
               entering={FadeIn.duration(250)}
               className={cn('h-10 w-20 items-center justify-center rounded-2xl')}>
-              <Text variant={'heading'} className={colorsInfluence.text}>
+              <Text variant={'heading'} className={textClass}>
                 {previewValue}
               </Text>
             </Animated.View>
@@ -151,7 +152,7 @@ export const InfluenceValue = ({
             min={min}
             selected={previewValue}
             translateX={translateX}
-            className={colorsInfluence.background}
+            className={bgClass}
           />
         )}
       </View>
