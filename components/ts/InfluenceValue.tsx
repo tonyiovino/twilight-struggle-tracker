@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { View } from 'react-native';
 import Animated, { useSharedValue, withSpring, FadeIn } from 'react-native-reanimated';
 import { Text } from '~/components/ui';
@@ -130,6 +130,12 @@ export const InfluenceValue = ({
       }
     })
     .runOnJS(true);
+
+  useEffect(() => {
+    setPreviewValue(value);
+    translateX.set((centerValue - value) * ITEM_WIDTH);
+    lastHapticValue.set(value);
+  }, [value]);
 
   return (
     <GestureDetector gesture={gesture}>
