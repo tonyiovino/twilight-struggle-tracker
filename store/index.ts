@@ -1,4 +1,19 @@
-import { useTrackerStore } from './tracker';
-import { usePointStore } from './point';
+import { create } from 'zustand';
+import { createTrackerSlice, TrackerSlice } from './tracker/tracker.slice';
+import { persist } from 'zustand/middleware';
 
-export { useTrackerStore, usePointStore };
+export type StoreState = TrackerSlice;
+
+export const useRichStore = create<StoreState>()(
+  persist(
+    (...args) => ({
+      ...createTrackerSlice(...args),
+    }),
+    {
+      name: 'rich-store',
+      partialize: (state) => ({
+        countries: state.countries,
+      }),
+    }
+  )
+);

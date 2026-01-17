@@ -1,6 +1,8 @@
+import { useEffect } from 'react';
 import { View, Pressable } from 'react-native';
 import Animated, { useAnimatedStyle, withTiming } from 'react-native-reanimated';
 import { Icon, Text } from '~/components/ui';
+import { useTrackerStore } from '~/store';
 
 export const RegionHeader = ({
   title,
@@ -14,6 +16,7 @@ export const RegionHeader = ({
   const animatedStyle = useAnimatedStyle(() => ({
     transform: [{ rotate: withTiming(isExpanded ? '90deg' : '0deg', { duration: 200 }) }],
   }));
+
   return (
     <View className="mb-2 rounded-2xl bg-card">
       <Pressable className="flex-row items-center justify-between p-4" onPress={onPress}>

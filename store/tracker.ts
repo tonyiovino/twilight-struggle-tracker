@@ -57,7 +57,6 @@ const trackerAction = {
     const { setCountries } = useTrackerStore.getState();
 
     setCountries(countries);
-    // setCountries(countriesData);
   },
 } satisfies TTrackerAction;
 
