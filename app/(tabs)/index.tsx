@@ -53,6 +53,7 @@ export default function Index() {
         showsVerticalScrollIndicator={false}
         renderSectionHeader={({ section }) => (
           <RegionHeader
+            regionId={section.regionId}
             title={section.title}
             isExpanded={expandedSections.has(section.regionId)}
             onPress={() => handleToggle(section.regionId)}
